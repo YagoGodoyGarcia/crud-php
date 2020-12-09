@@ -71,7 +71,7 @@
         <tr>
           <?php
           $enderecos = mysqli_query($conn, "SELECT * FROM clientes_enderecos WHERE clienteId = '$id'");
-          if (mysqli_num_rows($enderecos) === 1) {
+          if (mysqli_num_rows($enderecos) > 0) {
             while ($lista = mysqli_fetch_array($enderecos)) {
           ?>
 
