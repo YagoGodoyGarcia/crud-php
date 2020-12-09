@@ -70,8 +70,9 @@
           <td>Excluir</td>
         <tr>
           <?php
-          $enderecos = mysqli_query($conn, "SELECT * FROM clientes_enderecos WHERE idClientes = $row[idClientes]");
-          while ($lista = mysqli_fetch_array($enderecos)) {
+          $enderecos = mysqli_query($conn, "SELECT * FROM clientes_enderecos WHERE clienteId = '$id'");
+          if (mysqli_num_rows($enderecos) === 1) {
+            while ($lista = mysqli_fetch_array($enderecos)) {
           ?>
 
 
@@ -81,14 +82,16 @@
           <td><?php echo $lista['bairro'] ?></td>
           <td><?php echo $lista['cidade'] ?></td>
           <td><?php echo $lista['estado'] ?></td>
-          <td> <a href="editarEnderecos.php?idClientesEnderecos=<?php echo $lista['idClientesEnderecos'] ?>&idClientes=<?php echo $lista['idClientes']; ?>">Editar</a> </td>
-          <td> <a href="deletarLogradouro.php?idClientesEnderecos=<?php echo $lista['idClientesEnderecos'] ?>&idClientes=<?php echo $lista['idClientes']; ?>">Excluir</a> </td>
+          <td> <a href="editarEnderecos.php?idClientesEnderecos=<?php echo $lista['idClientesEnderecos'] ?>&idClientes=<?php echo $lista['clienteId']; ?>">Editar</a> </td>
+          <td> <a href="deletarLogradouro.php?idClientesEnderecos=<?php echo $lista['idClientesEnderecos'] ?>&idClientes=<?php echo $lista['clienteId']; ?>">Excluir</a> </td>
         </tr>
-      <?php
+    <?php
+            }
           }
-      ?>
+    ?>
     </div>
 
   </div>
 </body>
+
 </html>

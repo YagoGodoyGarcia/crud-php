@@ -45,17 +45,20 @@ if (isset($_SESSION['idUsuario']) && isset($_SESSION['nome'])) {
           <td>
             <?php
             $enderecos = mysqli_query($conn, "SELECT * FROM clientes_enderecos WHERE idClientes = $data[idClientes]");
-            while ($lista = mysqli_fetch_array($enderecos)) {
-            ?>
-              <p>
-                Logradouro: <?php echo $lista['logradouro'] ?>,
-                Numero: <?php echo $lista['numero'] ?>,
-                Bairro: <?php echo $lista['bairro'] ?>,
-                Cidade: <?php echo $lista['cidade'] ?>,
-                Estado: <?php echo $lista['estado'] ?>
 
-              </p>
+            if ($enderecos === TRUE) {
+              while ($lista = mysqli_fetch_array($enderecos)) {
+            ?>
+                <p>
+                  Logradouro: <?php echo $lista['logradouro'] ?>,
+                  Numero: <?php echo $lista['numero'] ?>,
+                  Bairro: <?php echo $lista['bairro'] ?>,
+                  Cidade: <?php echo $lista['cidade'] ?>,
+                  Estado: <?php echo $lista['estado'] ?>
+
+                </p>
             <?php
+              }
             }
             ?>
           <td><a href="editarCliente.php?idClientes=<?php echo $data['idClientes']; ?>">Editar</a></td>
