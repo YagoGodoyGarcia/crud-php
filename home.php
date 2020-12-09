@@ -44,9 +44,9 @@ if (isset($_SESSION['idUsuario']) && isset($_SESSION['nome'])) {
 
           <td>
             <?php
-            $enderecos = mysqli_query($conn, "SELECT * FROM clientes_enderecos WHERE idClientes = $data[idClientes]");
+            $enderecos = mysqli_query($conn, "SELECT * FROM clientes_enderecos WHERE clienteId = $data[idClientes]");
 
-            if ($enderecos === TRUE) {
+            if (mysqli_num_rows($enderecos) > 0) {
               while ($lista = mysqli_fetch_array($enderecos)) {
             ?>
                 <p>
