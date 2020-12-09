@@ -48,7 +48,7 @@
       <input type="text" name="telefone" maxlength="11" value=<?php
                                                               echo $row['telefone']
                                                               ?>><br>
-      <a href="home.php">Cancelar</a>
+      <a href="home.php">Voltar</a>
       <button type="submit">Salvar</button>
     </form>
 

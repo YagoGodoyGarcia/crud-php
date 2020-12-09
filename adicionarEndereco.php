@@ -49,7 +49,7 @@
       
       </div>
       <br>
-      <a href="home.php">Cancelar</a>
+      <a href="home.php">Voltar</a>
       <button type="submit">Salvar</button>
     </form>
   </div>

@@ -35,7 +35,7 @@
     <label>Telefone</label>
     <input type="text" id='telefone' name="telefone"  maxlength="11" placeholder="Telefone"><br>
 
-    <a href="home.php">Cancelar</a>
+    <a href="home.php">Voltar</a>
     <button type="submit">Salvar</button>
   </form>
 </body>
